@@ -1,6 +1,7 @@
-const mongoose = requre("mongoose");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/schools-db", {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
