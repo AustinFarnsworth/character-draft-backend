@@ -4,6 +4,7 @@ const db = require("./config/connection");
 
 // Router for character appearances
 const appearanceRouter = require("./routes/appearances");
+const characterRouter = require("./routes/characterRoutes");
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/appearances", appearanceRouter);
+app.use("/character", characterRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
