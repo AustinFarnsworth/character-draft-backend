@@ -9,8 +9,8 @@ const movieCharacterSchema = new mongoose.Schema({
 
 const movieCharacter = mongoose.model("MovieCharacter", movieCharacterSchema);
 
-movieCharacter.create({
-  name: "Captain America",
-});
+// movieCharacter.create({
+//   name: "Captain America",
+// });
 
 module.exports = movieCharacter;

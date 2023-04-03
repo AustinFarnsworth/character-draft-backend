@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const movieCharacter = require("../models/movieCharacter");
+const movieCharacter = require("../../models/movieCharacter");
 
 router.get("/character", async (req, res) => {
   try {

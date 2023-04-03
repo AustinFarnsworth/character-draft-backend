@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Appearance = require("../models/appearances");
+const Appearance = require("../../models/appearances");
 
 // Get All Character Appearance
 
