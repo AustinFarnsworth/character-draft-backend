@@ -4,7 +4,7 @@ const Appearance = require("../../models/appearances");
 
 // Get All Character Appearance
 
-router.get("/appearances", async (req, res) => {
+router.get("/", async (req, res) => {
   // get all goes here
 
   try {
@@ -15,6 +15,10 @@ router.get("/appearances", async (req, res) => {
   }
 });
 // Get One Character Appearance
+
+router.get("/:id", async (req, res) => {
+  res.send(req.params.id);
+});
 
 // Create Character Appearance
 
