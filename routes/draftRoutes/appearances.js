@@ -17,7 +17,12 @@ router.get("/", async (req, res) => {
 // Get One Character Appearance
 
 router.get("/:id", async (req, res) => {
-  res.send(req.params.id);
+  try {
+    const appearances = await Appearance.findById();
+    res.json(appearances);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 // Create Character Appearance

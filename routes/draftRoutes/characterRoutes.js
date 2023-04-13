@@ -18,26 +18,27 @@ router.get("/:id", async (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
-
-  router.post("/", async (req, res) => {
-    try {
-      movieCharacter.findByIdAndUpdate(
-        {_id: req.params.characterID},
-        {$set: req.body},
-        {runValidators: true, new: true}
-      );
-    } catch (error) {
-      res.status(500).send(error);
-    }
-  });
-
-  router.post("/:id", async (req, res) => {
-    try {
-      res.json({message: "Character updated successfully! "});
-    } catch (error) {
-      res.status(500).json({});
-    }
-  });
 });
+
+router.put("/:id", async (req, res) => {
+  try {
+    movieCharacter.findByIdAndUpdate(
+      {_id: req.params.id},
+      {$addToSet: {name: req.body}},
+      {runValidators: true, new: true}
+    );
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+// router.post("/:id", async (req, res) => {
+//   try {
+//     res.json({message: "Character updated successfully! "});
+//   } catch (error) {
+//     res.status(500).json({});
+//   }
+// });
 
 module.exports = router;

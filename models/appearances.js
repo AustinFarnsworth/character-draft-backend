@@ -19,4 +19,10 @@ const appearanceSchema = new mongoose.Schema({
 
 const Appearance = mongoose.model("Appearance", appearanceSchema);
 
+// Appearance.create({
+//   name: "Iron Man",
+//   movie: "Ant Man",
+//   numberOfAppearances: "0",
+// });
+
 module.exports = Appearance;
