@@ -20,11 +20,20 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// create character
+router.post("/", async (req, res) => {
+  try {
+    movieCharacter.create(req.body);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+});
+
 router.put("/:id", async (req, res) => {
   try {
     movieCharacter.findByIdAndUpdate(
       {_id: req.params.id},
-      {$addToSet: {name: req.body}},
+      {name: req.body},
       {runValidators: true, new: true}
     );
   } catch (error) {
