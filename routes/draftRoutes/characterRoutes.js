@@ -5,12 +5,13 @@ const movieCharacter = require("../../models/movieCharacter");
 router.get("/", async (req, res) => {
   try {
     const character = await movieCharacter.find();
-    res.json(
-      {
-        NumberOfCharacters: character.length,
-      },
-      {character}
-    );
+    res.send(character);
+    // res.json(
+    //   {
+    //     NumberOfCharacters: character.length,
+    //   },
+    //   {character}
+    // );
   } catch (error) {
     res.status(500).send(error);
   }
