@@ -5,14 +5,13 @@ const appearanceSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    trim: true,
   },
   movie: {
     type: String,
     required: true,
   },
   numberOfAppearances: {
-    type: String,
+    type: Number,
     required: true,
   },
 });

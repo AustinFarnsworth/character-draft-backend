@@ -54,9 +54,7 @@ router.put("/:id", async (req, res) => {
 // Delete Character
 router.delete("/:id", async (req, res) => {
   try {
-    const character = await movieCharacter.findOneAndDelete({
-      _id: req.params.characterId,
-    });
+    const character = await movieCharacter.findByIdAndDelete(req.params.id);
 
     res.json({message: "Character Deleted!"});
   } catch (error) {

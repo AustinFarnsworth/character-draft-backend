@@ -46,7 +46,8 @@ router.put("/:id", async (req, res) => {
       {$set: req.body},
       {new: true}
     );
-    res.json({message: "Character appearance updated!"});
+
+    res.json(appearance);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -57,7 +58,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const appearance = await Appearance.findByIdAndDelete({
+    const appearance = await Appearance.findOneAndDelete({
       _id: req.params.appearanceId,
     });
 
